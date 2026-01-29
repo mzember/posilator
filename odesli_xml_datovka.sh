@@ -5,8 +5,8 @@ set -euo pipefail
 #RECIP_DBID="qdhny4c"                 # FÚ pro Jihomoravský kraj
 RECIP_DBID="r4pn6hp"                 # FÚ BRNO I.
 #RECIP_DBID="..."   # do vlastni schranky mi to nefunguje, jako fyzicke osobe
-DIR="batch1"                               # kde leží XML
-SENT_DIR="./sent"                     # kam třídit po odeslání
+DIR="xml_k_poslani"                    # kde leží XML
+SENT_DIR="./odeslane"                  # kam třídit po odeslání
 
 : "${DATOVKA_LOGIN:?Set DATOVKA_LOGIN env var first (username='..',password='..')}"
 command -v datovka >/dev/null || { echo "datovka binary not found"; exit 1; }
@@ -89,18 +89,18 @@ send_one() {
   echo "[>] Sending: $(basename "$filepath")  ->  ${RECIP_DBID}  (${ann})"
 
   # Zkus několik tvarů (pro kompatibilitu různých buildů)
-  if datovka --login "$DATOVKA_LOGIN" "$SEND_OPT" "$payload" | tee -a send_dane.log; then
+  if datovka --login "$DATOVKA_LOGIN" "$SEND_OPT" "$payload" | tee -a logs/send_dane.log; then
     return 0
   fi
 
   # fallback 1: bez uvozovek kolem klíčů (některé verze)
   payload="dbIDRecipient=${RECIP_DBID},dmAnnotation=${ann},${ATT_KEY}=${filepath},dmPublishOwnID='1'"
-  if datovka --login "$DATOVKA_LOGIN" "$SEND_OPT" "$payload" | tee -a send_dane.log; then
+  if datovka --login "$DATOVKA_LOGIN" "$SEND_OPT" "$payload" | tee -a logs/send_dane.log; then
     return 0
   fi
 
   # fallback 2: některé buildy chtějí parametr s prefixem (méně časté)
-  if datovka --login "$DATOVKA_LOGIN" "$SEND_OPT" "dbIDRecipient='${RECIP_DBID}'" "dmAnnotation='${ann}'" "${ATT_KEY}='${filepath}'" | tee -a send_dane.log; then
+  if datovka --login "$DATOVKA_LOGIN" "$SEND_OPT" "dbIDRecipient='${RECIP_DBID}'" "dmAnnotation='${ann}'" "${ATT_KEY}='${filepath}'" | tee -a logs/send_dane.log; then
     return 0
   fi
 

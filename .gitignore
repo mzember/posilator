@@ -1,5 +1,7 @@
 .env
-send_dane.log
+logs/send_dane.log
 .vscode/launch.json
-sent/
-batch1/
+odeslane/
+xml_k_poslani/
+xml_vygenerovane/
+__pycache__/faktury_stahovator.cpython-312.pyc

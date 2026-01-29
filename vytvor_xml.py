@@ -216,7 +216,7 @@ def main():
 
     tmpl_dp3 = os.environ.get("XML_TEMPLATE_DP3", "templates/dphdp3.xml")
     tmpl_sh = os.environ.get("XML_TEMPLATE_SH", "templates/dphshv.xml")
-    out_dir = os.environ.get("XML_OUT_DIR", "out")
+    out_dir = os.environ.get("XML_OUT_DIR", "xml_vygenerovane")
     submit_date = os.environ.get(
         "DPH_SUBMIT_DATE") or date.today().strftime("%d.%m.%Y")
 
@@ -310,8 +310,8 @@ def main():
     for p in written:
         print(f"[ok] wrote {p}")
     print()
-    print("[next] If OK, move to batch1 and send:")
-    print("  mv -i out/*.xml batch1/ && ./send_dane_xml_sh_dp3.sh")
+    print("[next] If OK, move to xml_k_poslani and send:")
+    print("  mv -i xml_vygenerovane/*.xml xml_k_poslani/ && ./odesli_xml_datovka.sh")
 
 
 if __name__ == "__main__":
