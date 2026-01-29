@@ -92,6 +92,7 @@ export DATOVKA_LOGIN="username='...',password='...'"
 > Posílač po úspěchu soubory roztřídí do `sent/YYYY-MM/...`.
 
 Pokud chcete pouze vidět, co to bude posílat, program Datovka lze mít puštěné jako GUI a ve skriptu [send_dane_xml_sh_dp3.sh] odkomentovat/přepnout na možnost `--compose`. Pak to jen zobrazí, neodešle automaticky.
+
 ---
 
 ### B) Stažení podkladů z Fakturoidu (částky) pro vyplnění XML
