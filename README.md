@@ -81,7 +81,9 @@ FAKTUROID_UA=posilator (email@example.com)
 export DATOVKA_LOGIN="username='...',password='...'"
 ```
 
-3. Spusťte posílač:
+3. Pokud podáváte jinému FÚ, než BRNO I, upravte ve skriptu ID datové schránky (příjemce).
+
+4. Spusťte posílač:
 
 ```bash
 ./send_dane_xml_sh_dp3.sh
@@ -89,7 +91,7 @@ export DATOVKA_LOGIN="username='...',password='...'"
 
 > Posílač po úspěchu soubory roztřídí do `sent/YYYY-MM/...`.
 
-Pokud chcete vidět, co to bude posílat, program Datovka lze mít puštěné jako GUI a ve skriptu [send_dane_xml_sh_dp3.sh] odkomentovat/přepnout na možnost `--compose`. Pak to jen zobrazí, neodešle automaticky.
+Pokud chcete pouze vidět, co to bude posílat, program Datovka lze mít puštěné jako GUI a ve skriptu [send_dane_xml_sh_dp3.sh] odkomentovat/přepnout na možnost `--compose`. Pak to jen zobrazí, neodešle automaticky.
 ---
 
 ### B) Stažení podkladů z Fakturoidu (částky) pro vyplnění XML
