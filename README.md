@@ -41,9 +41,8 @@ Automatické **přepsání/naplnění XML** ze šablony:
 ---
 
 ## Požadavky
-- Linux/macOS (funguje i na WSL)
 - **Python 3.9+**
-- Pro odesílání XML: nainstalovaný **Datovka** klient (CLI režim)
+- Pro odesílání XML datovou schránkou: nainstalovaný program **Datovka**, zde je [návod, jak Datovku nainstalovat v Linuxu](https://web.archive.org/web/20250803062753/https://software.opensuse.org//download.html?project=home%3ACZ-NIC%3Adatovka-latest&package=datovka)
 
 ---
 
@@ -59,20 +58,14 @@ cd <repo>
 
 ## Konfigurace Fakturoid API (`.env`)
 
-Vytvořte `.env` (NEcommitujte):
+Vytvořte `.env` a upravte dle sebe:
 
 ```env
 FAKTUROID_CLIENT_ID=xxxxxxxx
 FAKTUROID_CLIENT_SECRET=yyyyyyyy
-FAKTUROID_UA=DPH-Automation (email@example.com)
+FAKTUROID_UA=posilator (email@example.com)
 # volitelně:
 # FAKTUROID_ACCOUNT_SLUG=moje-firma
-```
-
-Doporučeno:
-
-```bash
-chmod 600 .env
 ```
 
 ---
