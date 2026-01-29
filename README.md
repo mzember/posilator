@@ -45,14 +45,11 @@ Pokud máte vyšší tarif Fakturoidu a generujete XML přímo v Fakturoidu, mů
 
 ---
 
-## Požadavky
-- **Python 3.9+**
-- Pro odesílání XML datovou schránkou: nainstalovaný program **Datovka**, zde je [návod, jak Datovku nainstalovat v Linuxu](https://web.archive.org/web/20250803062753/https://software.opensuse.org//download.html?project=home%3ACZ-NIC%3Adatovka-latest&package=datovka)
-
----
-
 ## Instalace
-Naklonujte repo a nainstalujte (není potřeba nic extra):
+- Pro odesílání XML datovou schránkou: je potřeba mít program **Datovka**, zde je [návod, jak Datovku nainstalovat v Linuxu](https://web.archive.org/web/20250803062753/https://software.opensuse.org//download.html?project=home%3ACZ-NIC%3Adatovka-latest&package=datovka)
+- Pro napojení na Fakturoid není potřeba nic extra.
+
+Naklonujte repo a vejděte do adresáře:
 
 ```bash
 git clone <repo>
@@ -66,6 +63,7 @@ cd <repo>
 Vytvořte `.env` a upravte dle sebe:
 
 ```env
+# získat z profilu uživatele
 FAKTUROID_CLIENT_ID=xxxxxxxx
 FAKTUROID_CLIENT_SECRET=yyyyyyyy
 FAKTUROID_UA=posilator (email@example.com)
