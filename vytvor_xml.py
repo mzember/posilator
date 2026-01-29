@@ -138,6 +138,8 @@ def collect_month_data(invoices, months, period_field, exclude_country):
 def set_attr(elem, name, value):
     if elem is None:
         return
+    if value is None or value == "":
+        return
     elem.set(name, value)
 
 
@@ -210,8 +212,8 @@ def main():
     ua = env_required("FAKTUROID_UA")
     slug_env = os.environ.get("FAKTUROID_ACCOUNT_SLUG")
 
-    c_ufo = env_required("C_UFO")
-    c_pracufo = env_required("C_PRACUFO")
+    c_ufo = os.environ.get("C_UFO")
+    c_pracufo = os.environ.get("C_PRACUFO")
     name_prefix = env_required("XML_NAME_PREFIX")
 
     tmpl_dp3 = os.environ.get("XML_TEMPLATE_DP3", "templates/dphdp3.xml")

@@ -4,4 +4,6 @@ logs/send_dane.log
 odeslane/
 xml_k_poslani/
 xml_vygenerovane/
+templates/dphdp3.xml
+templates/dphshv.xml
 __pycache__/faktury_stahovator.cpython-312.pyc

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pisemnost nazevSW="posilator">
+  <DPHSHV verzePis="01.02.09">
+    <VetaD d_poddp="01.01.2026" dokument="SHV" k_uladis="DPH" rok="2025" shvies_forma="R" mesic="12"/>
+    <VetaP c_ufo="461" c_pracufo="3001" c_orient="1" c_pop="1" dic="CZ00000000" ulice="Ulice" naz_obce="Mesto" psc="00000" stat="Česká republika" typ_ds="F" jmeno="Jmeno" prijmeni="Prijmeni" titul=""/>
+    <VetaR c_vat="EU00000000" k_pln_eu="3" k_stat="XX" pln_hodnota="0" pln_pocet="0"/>
+  </DPHSHV>
+</Pisemnost>

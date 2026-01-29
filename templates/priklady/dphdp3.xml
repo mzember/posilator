@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pisemnost nazevSW="posilator">
+  <DPHDP3 verzePis="01.02.16">
+    <VetaD dokument="DP3" k_uladis="DPH" dapdph_forma="B" typ_platce="I" trans="A" c_okec="622000" d_poddp="01.01.2026" rok="2025" mesic="12"/>
+    <VetaP c_pracufo="3001" c_ufo="461" dic="CZ00000000" email="email@example.com" c_telef="000000000" ulice="Ulice" naz_obce="Mesto" psc="00000" stat="ČESKÁ REPUBLIKA" c_pop="1" c_orient="1" jmeno="Jmeno" prijmeni="Prijmeni" titul="" typ_ds="F"/>
+    <Veta1 obrat23="0.0" dan23="0.0" obrat5="0.0" dan5="0.0" p_sl23_e="0.0" dan_psl23_e="0.0" p_sl5_e="0.0" dan_psl5_e="0.0" p_sl23_z="0.0" dan_psl23_z="0.0" p_sl5_z="0.0" dan_psl5_z="0.0" rez_pren23="0.0" dan_rpren23="0.0" rez_pren5="0.0" dan_rpren5="0.0"/>
+    <Veta2 pln_sluzby="0.0" pln_rez_pren="0.0" pln_zaslani="0.0" pln_ost="0.0"/>
+    <Veta4 pln23="0.0" odp_tuz23_nar="0.0" pln5="0.0" odp_tuz5_nar="0.0" nar_zdp23="0.0" od_zdp23="0.0" nar_zdp5="0.0" od_zdp5="0.0" odp_sum_kr="0" odp_sum_nar="0.0"/>
+    <Veta6 dano="0" dano_no="0" dano_da="0.0" dan_zocelk="0.0" odp_zocelk="0.0"/>
+  </DPHDP3>
+</Pisemnost>

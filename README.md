@@ -34,11 +34,14 @@ Pokud máte vyšší tarif Fakturoidu a generujete XML přímo v Fakturoidu, mů
 ---
 
 ## Struktura adresářů
-- `templates/` – vzorové XML šablony (DP3/SH)
+- `templates/` – vaše vyplněné XML šablony (DP3/SH)
+- `templates/priklady/` – anonymní příklady k vyplnění
 - `xml_vygenerovane/` – výstup z `vytvor_xml.sh`
 - `xml_k_poslani/` – XML připravené k odeslání
 - `odeslane/` – odeslané XML (roztříděno podle měsíců)
 - `logs/` – logy z odesílání (`logs/send_dane.log`)
+
+> `templates/dphdp3.xml` a `templates/dphshv.xml` jsou v `.gitignore`, aby se omylem necommitly osobní údaje.
 
 ---
 
@@ -69,9 +72,9 @@ FAKTUROID_UA=posilator (email@example.com)
 # volitelně:
 # FAKTUROID_ACCOUNT_SLUG=moje-firma
 
-# cisla uradu
-C_UFO=461
-C_PRACUFO=3001
+# cisla uradu (volitelne; pokud jsou nastavena, prepisou hodnoty v sablonach)
+# C_UFO=461
+# C_PRACUFO=3001
 
 # prefix jmena souboru
 XML_NAME_PREFIX="firma"
@@ -90,6 +93,10 @@ XML_OUT_DIR="xml_vygenerovane"
 ## Použití
 
 ### 1) Vytvořím XML (z Fakturoidu)
+
+1. Otevřete v EPO anonymní šablony z `templates/priklady/`, vyplňte své údaje a uložte jako:
+   - `templates/dphdp3.xml`
+   - `templates/dphshv.xml`
 
 ```bash
 ./vytvor_xml.sh
