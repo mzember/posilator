@@ -46,8 +46,14 @@ parse_file() {
   # vstup: filename
   # výstup: TYPE YEAR MONTH
   local f="$1"
-  if [[ "$f" =~ ^martinzember-(dphdp3|dphshv)-([0-9]{4})-([0-9]{1,2})m\.xml$ ]]; then
-    echo "${BASH_REMATCH[1]} ${BASH_REMATCH[2]} ${BASH_REMATCH[3]}"
+  if [[ "$f" =~ ^.+-DP3-([0-9]{4})-([0-9]{2})\.xml$ ]]; then
+    echo "dphdp3 ${BASH_REMATCH[1]} ${BASH_REMATCH[2]}"
+  elif [[ "$f" =~ ^.+-SH-([0-9]{4})-([0-9]{2})\.xml$ ]]; then
+    echo "dphshv ${BASH_REMATCH[1]} ${BASH_REMATCH[2]}"
+  elif [[ "$f" =~ ^.+-dphdp3-([0-9]{4})-([0-9]{1,2})m\.xml$ ]]; then
+    echo "dphdp3 ${BASH_REMATCH[1]} ${BASH_REMATCH[2]}"
+  elif [[ "$f" =~ ^.+-dphshv-([0-9]{4})-([0-9]{1,2})m\.xml$ ]]; then
+    echo "dphshv ${BASH_REMATCH[1]} ${BASH_REMATCH[2]}"
   else
     return 1
   fi
@@ -107,9 +113,9 @@ send_one() {
 # ====== Main ======
 shopt -s nullglob
 
-files=( "$DIR"/martinzember-dphdp3-*.xml "$DIR"/martinzember-dphshv-*.xml )
+files=( "$DIR"/*.xml )
 if (( ${#files[@]} == 0 )); then
-  echo "Nenašel jsem žádné soubory martinzember-*.xml v $DIR"
+  echo "Nenašel jsem žádné XML v $DIR (čekám *-DP3-YYYY-MM.xml / *-SH-YYYY-MM.xml)"
   exit 0
 fi
 
@@ -143,4 +149,3 @@ for base in "${files_sorted[@]}"; do
 done
 
 echo "[done] All files processed."
-
