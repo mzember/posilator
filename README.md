@@ -92,7 +92,7 @@ XML_OUT_DIR="xml_vygenerovane"
 
 ### 1) Vytvořím XML (z Fakturoidu)
 
-1. Otevřete v EPO anonymní šablony z `templates/priklady/`, vyplňte své údaje a uložte jako:
+1. Otevřete v EPO anonymní šablony z `templates/priklady/`, vyplňte své údaje a uložte o adresář výš jako:
    - `templates/dphdp3.xml`
    - `templates/dphshv.xml`
 
